@@ -14,64 +14,51 @@
   margin-bottom: 32px;
 }
 
-/* Фильтры — обёртка со скроллом */
-.filtersWrap {
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  margin-bottom: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+/* SELECT — мобилка */
+.selectWrap {
+  position: relative;
+  margin-bottom: 32px;
+  display: block;
 }
 
-.filtersWrap::-webkit-scrollbar {
-  display: none;
-}
-
-.filters {
-  display: flex;
-  gap: 0;
-  width: max-content;
-  padding-bottom: 0;
-  margin: 0 auto;
-}
-
-.filterBtn {
+.select {
+  width: 100%;
+  padding: 14px 44px 14px 20px;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 15px;
   color: #3d2010;
-  background: transparent;
-  border: none;
-  padding: 10px 16px;
+  background: #fdf6ee;
+  border: 2px solid #933c24;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
-  position: relative;
-  transition: color 0.3s;
-  white-space: nowrap;
+  outline: none;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
 }
 
-.filterBtn::after {
-  content: "";
+.select:focus {
+  border-color: #7a3020;
+  box-shadow: 0 0 0 3px rgba(147, 60, 36, 0.15);
+}
+
+/* Кастомная стрелка */
+.selectArrow {
   position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #933c24;
-  transform: scaleX(0);
-  transition: transform 0.3s;
-}
-
-.filterBtn:hover {
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
   color: #933c24;
+  pointer-events: none;
 }
 
-.filterBtnActive {
-  color: #933c24;
-  font-weight: 600;
-}
-
-.filterBtnActive::after {
-  transform: scaleX(1);
+/* Кнопки фильтров — скрыты на мобилке */
+.filtersWrap {
+  display: none;
 }
 
 /* Счётчик */
@@ -108,7 +95,6 @@
   transform: scale(1.05);
 }
 
-/* Load More кнопка */
 .loadMoreBtn {
   display: block;
   margin: 0 auto;
@@ -150,14 +136,63 @@
     margin-bottom: 40px;
   }
 
+  /* Скрываем select на планшете */
+  .selectWrap {
+    display: none;
+  }
+
+  /* Показываем кнопки */
+  .filtersWrap {
+    display: block;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 4px;
+  }
+
   .filters {
-    width: auto;
+    display: flex;
+    flex-wrap: wrap; /* два ряда */
     justify-content: center;
+    gap: 0;
   }
 
   .filterBtn {
-    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3d2010;
+    background: transparent;
+    border: none;
     padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+
+  .filterBtn::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #933c24;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .filterBtn:hover {
+    color: #933c24;
+  }
+
+  .filterBtnActive {
+    color: #933c24;
+    font-weight: 600;
+  }
+
+  .filterBtnActive::after {
+    transform: scaleX(1);
   }
 
   .grid {
@@ -171,6 +206,10 @@
 @media screen and (min-width: 1440px) {
   .explore {
     padding: 100px 0;
+  }
+
+  .filterBtn {
+    font-size: 18px;
   }
 
   .grid {

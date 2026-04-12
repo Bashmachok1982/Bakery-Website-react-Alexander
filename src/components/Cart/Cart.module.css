@@ -41,6 +41,7 @@
   justify-content: space-between;
   padding: 24px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .cartTitle {
@@ -62,6 +63,7 @@
   transform: rotate(90deg);
 }
 
+/* Пустая корзина */
 .empty {
   flex: 1;
   display: flex;
@@ -99,28 +101,36 @@
   color: #fff;
 }
 
-.itemsList {
+/* Тело корзины — скролл */
+.cartBody {
   flex: 1;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Список товаров */
+.itemsList {
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .item {
   display: flex;
   gap: 12px;
   align-items: center;
-  padding: 12px;
+  padding: 10px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .itemImg {
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
@@ -128,42 +138,45 @@
 
 .itemInfo {
   flex: 1;
+  min-width: 0;
 }
 
 .itemName {
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   color: #1a0f0a;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .itemPrice {
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: #933c24;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .itemControls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .controlBtn {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 1px solid #933c24;
   background: transparent;
   color: #933c24;
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   transition:
     background 0.2s,
     color 0.2s;
@@ -177,9 +190,9 @@
 .itemQty {
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   color: #1a0f0a;
-  min-width: 20px;
+  min-width: 18px;
   text-align: center;
 }
 
@@ -187,13 +200,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 8px;
+  gap: 6px;
 }
 
 .itemTotal {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   color: #1a0f0a;
 }
 
@@ -201,7 +214,7 @@
   background: none;
   border: none;
   color: #ccc;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -210,41 +223,188 @@
   color: #e74c3c;
 }
 
-.footer {
-  padding: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Промокод */
+.promoSection {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.promoLabel {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 13px;
   color: #1a0f0a;
+  margin-bottom: 8px;
 }
 
-.totalPrice {
-  font-weight: 700;
-  font-size: 22px;
-  color: #933c24;
+.promoRow {
+  display: flex;
+  gap: 8px;
 }
 
-.orderBtn {
-  width: 100%;
-  padding: 16px;
+.promoInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.3s;
+  text-transform: uppercase;
+  background: #fff;
+}
+
+.promoInput:focus {
+  border-color: #933c24;
+}
+
+.promoSuccess {
+  border-color: #27ae60 !important;
+}
+
+.promoBtn {
+  padding: 10px 16px;
   background: #933c24;
   color: #fff;
   border: none;
   border-radius: 8px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 13px;
   cursor: pointer;
   transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.promoBtn:hover {
+  background: #7a3020;
+}
+
+.promoBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.promoOk {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #27ae60;
+  margin-top: 6px;
+}
+
+.promoErr {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 6px;
+}
+
+.promoHint {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 8px;
+}
+
+.promoLink {
+  color: #933c24;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Форма контактов */
+.formSection {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.formTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #1a0f0a;
+  margin-bottom: 12px;
+}
+
+.formField {
+  margin-bottom: 10px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #1a0f0a;
+  outline: none;
+  transition: border-color 0.3s;
+  background: #fff;
+}
+
+.formInput:focus {
+  border-color: #933c24;
+}
+
+.inputError {
+  border-color: #e74c3c !important;
+}
+
+.fieldError {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  color: #e74c3c;
+  margin-top: 4px;
+}
+
+/* Итог */
+.footer {
+  padding: 16px 20px;
+  flex-shrink: 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #1a0f0a;
+  margin-bottom: 6px;
+}
+
+.discountRow {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.totalFinal {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.totalPrice {
+  color: #933c24;
+  font-size: 20px;
+}
+
+.orderBtn {
+  width: 100%;
+  padding: 14px;
+  background: #933c24;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 8px;
 }
 
 .orderBtn:hover {
@@ -258,14 +418,14 @@
 
 .clearBtn {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background: transparent;
   color: #933c24;
   border: 1px solid #933c24;
   border-radius: 8px;
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition:
     background 0.3s,
@@ -285,6 +445,7 @@
   padding: 12px;
   background: #eafaf1;
   border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 .errorMsg {
@@ -292,4 +453,5 @@
   font-size: 13px;
   color: #e74c3c;
   text-align: center;
+  margin-top: 6px;
 }

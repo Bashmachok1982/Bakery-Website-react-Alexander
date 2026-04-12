@@ -3,6 +3,7 @@ import styles from "./ExploreMore.module.css";
 
 const CATEGORIES = [
   "All",
+  "Popular",
   "Bread",
   "Croissant",
   "Muffin",
@@ -10,10 +11,8 @@ const CATEGORIES = [
   "Cheesecake",
   "Cupcake",
   "Tart",
-  "Favorite",
 ];
 
-// Генерируем массив картинок для каждой категории
 const generateItems = (category, count) =>
   Array.from({ length: count }, (_, i) => ({
     id: `${category}-${i + 1}`,
@@ -33,7 +32,6 @@ const ALL_ITEMS = [
   ...generateItems("tart", 15),
 ];
 
-// Favorite — по 2 лучших из каждой категории
 const FAVORITE_ITEMS = [
   ...generateItems("bread", 2),
   ...generateItems("croissant", 2),
@@ -52,7 +50,7 @@ function ExploreMore() {
 
   const getFilteredItems = () => {
     if (activeCategory === "All") return ALL_ITEMS;
-    if (activeCategory === "Favorite") return FAVORITE_ITEMS;
+    if (activeCategory === "Popular") return FAVORITE_ITEMS;
     return ALL_ITEMS.filter(
       (item) => item.category === activeCategory.toLowerCase(),
     );
@@ -64,7 +62,7 @@ function ExploreMore() {
 
   const handleCategoryChange = (cat) => {
     setActiveCategory(cat);
-    setVisibleCount(ITEMS_PER_PAGE); // сбрасываем при смене категории
+    setVisibleCount(ITEMS_PER_PAGE);
   };
 
   const handleLoadMore = () => {
@@ -76,7 +74,24 @@ function ExploreMore() {
       <div className="container">
         <h2 className={styles.title}>Explore More</h2>
 
-        {/* Фильтры */}
+        {/* SELECT — только мобилка */}
+        <div className={styles.selectWrap}>
+          <select
+            className={styles.select}
+            value={activeCategory}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+          >
+            {CATEGORIES.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+          {/* Кастомная стрелка */}
+          <span className={styles.selectArrow}>▾</span>
+        </div>
+
+        {/* КНОПКИ — планшет и десктоп */}
         <div className={styles.filtersWrap}>
           <ul className={styles.filters}>
             {CATEGORIES.map((cat) => (
@@ -112,14 +127,12 @@ function ExploreMore() {
           ))}
         </ul>
 
-        {/* Load More */}
         {hasMore && (
           <button className={styles.loadMoreBtn} onClick={handleLoadMore}>
             Load More
           </button>
         )}
 
-        {/* Все загружены */}
         {!hasMore && filteredItems.length > ITEMS_PER_PAGE && (
           <p className={styles.allLoaded}>All items loaded ✓</p>
         )}
