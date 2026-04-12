@@ -1,0 +1,296 @@
+/* ===== МОБИЛКА ===== */
+
+.products {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  background-color: #e9bd8c;
+}
+
+.title {
+  font-family: "Sansita Swashed", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  color: #1a0f0a;
+  margin-bottom: 40px;
+}
+
+/* Трек — скрывает что выезжает за края */
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Ряд карточек */
+.row {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* Верхний ряд — влево */
+.rowLeft {
+  animation: scrollLeft 20s linear infinite;
+}
+
+/* Нижний ряд — вправо */
+.rowRight {
+  animation: scrollRight 20s linear infinite;
+}
+
+.rowLeft:hover,
+.rowRight:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-33.33%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Карточка */
+.card {
+  width: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a0f0a, #2d1810);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.cardImg {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: linear-gradient(145deg, #1a0f0a, #2d1810);
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* было cover — теперь contain */
+  transition: transform 0.4s;
+}
+
+.card:hover .cardImg img {
+  transform: scale(1.08);
+}
+
+.cardBody {
+  padding: 16px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cardPrice {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #e9bd8c;
+}
+
+.cardInfo {
+  background: transparent;
+  border: 1px solid rgba(233, 189, 140, 0.5);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.cardInfo:hover {
+  border-color: #e9bd8c;
+}
+
+.cardInfo svg {
+  fill: #e9bd8c;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardName {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f5f5f5;
+  max-width: 160px;
+}
+
+.cardAdd {
+  background: #933c24;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+.cardAdd:hover {
+  background: #7a3020;
+  transform: scale(1.05);
+}
+
+.cardAdd:active {
+  transform: scale(0.95);
+}
+
+/* Info модалка */
+.infoBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoModal {
+  background: linear-gradient(145deg, #1a0f0a, #2d1810);
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: calc(100vw - 40px);
+  max-width: 400px;
+  position: relative;
+  border: 1px solid rgba(233, 189, 140, 0.3);
+}
+
+.infoClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #e9bd8c;
+  cursor: pointer;
+}
+
+.infoImg {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.infoName {
+  font-family: "Sansita Swashed", sans-serif;
+  font-size: 24px;
+  color: #f5f5f5;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.infoPrice {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #e9bd8c;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.infoDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.8);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.infoBuy {
+  display: block;
+  width: 100%;
+  background: #933c24;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.infoBuy:hover {
+  background: #7a3020;
+}
+
+/* ===== ПЛАНШЕТ ===== */
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 48px;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    width: 360px;
+  }
+
+  .cardImg {
+    height: 290px;
+  }
+}
+
+/* ===== ДЕСКТОП ===== */
+
+@media screen and (min-width: 1440px) {
+  .products {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .card {
+    width: 360px;
+  }
+}

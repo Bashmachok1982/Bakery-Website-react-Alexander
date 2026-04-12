@@ -1,0 +1,167 @@
+/* ===== МОБИЛКА ===== */
+
+.featured {
+  padding: 60px 0;
+  background-color: #fdf6ee;
+}
+
+.title {
+  font-family: "Sansita Swashed", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  text-align: center;
+  color: #1a0f0a;
+  margin-bottom: 40px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  width: 100%;
+  min-width: 0; /* важно для flex детей */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.imgWrap {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:hover .img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 5, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlayBtn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  background: #933c24;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transform: translateY(10px);
+  transition:
+    transform 0.3s,
+    background 0.3s;
+}
+
+.card:hover .overlayBtn {
+  transform: translateY(0);
+}
+
+.overlayBtn:hover {
+  background: #7a3020;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.name {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1a0f0a;
+}
+
+.price {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #933c24;
+}
+
+/* ===== ПЛАНШЕТ ===== */
+
+@media screen and (min-width: 768px) {
+  .featured {
+    padding: 80px 0;
+  }
+
+  .title {
+    font-size: 48px;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .card {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .imgWrap {
+    height: 300px;
+  }
+}
+
+/* ===== ДЕСКТОП ===== */
+
+@media screen and (min-width: 1440px) {
+  .featured {
+    padding: 100px 0;
+  }
+
+  .imgWrap {
+    height: 380px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+  .card {
+    width: calc((100% - 20px * 2) / 3);
+  }
+}

@@ -1,0 +1,281 @@
+/* ===== МОБИЛКА ===== */
+
+.order {
+  background-image: url("/img/order/order-1x.webp");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .order {
+    background-image: url("/img/order/order-2x.webp");
+  }
+}
+
+.orderInner {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  /* Только мобилка */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(0.8px);
+}
+
+.orderTitle {
+  font-family: "Sansita Swashed", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #933c24;
+  margin-bottom: 20px;
+}
+
+/* Счётчик — анимируется */
+.orderCount {
+  display: inline-block;
+  font-size: 56px;
+  color: #933c24;
+  font-weight: 700;
+  transition: transform 0.1s;
+}
+
+.orderText {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #3d2010;
+  margin-bottom: 32px;
+}
+
+.orderText strong {
+  color: #933c24;
+  font-weight: 700;
+}
+
+.orderBtn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background: #933c24;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.2s;
+  animation: wiggle 2.5s ease-in-out infinite;
+}
+
+.orderBtn:hover {
+  background: #7a3020;
+  animation: none;
+  transform: scale(1.05);
+}
+
+@keyframes wiggle {
+  0% {
+    transform: scale(1);
+  }
+  85% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.06);
+  }
+  95% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Модалка */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fdf6ee;
+  border-radius: 16px;
+  padding: 40px 32px;
+  width: calc(100vw - 40px);
+  max-width: 440px;
+  position: relative;
+  text-align: center;
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #933c24;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modalClose:hover {
+  transform: rotate(90deg);
+}
+
+.modalTitle {
+  font-family: "Sansita Swashed", sans-serif;
+  font-size: 28px;
+  color: #933c24;
+  margin-bottom: 20px;
+}
+
+/* Промокод */
+.promoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #fff;
+  border: 2px dashed #933c24;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 20px;
+}
+
+.promoCode {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: #933c24;
+}
+
+.copyBtn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  background: #933c24;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background: #7a3020;
+}
+
+.modalText {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #3d2010;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1.5px solid rgba(147, 60, 36, 0.3);
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #3d2010;
+  outline: none;
+  transition: border-color 0.3s;
+  background: #fff;
+}
+
+.modalInput:focus {
+  border-color: #933c24;
+}
+
+.modalBtn {
+  width: 100%;
+  padding: 14px;
+  background: #933c24;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modalBtn:hover {
+  background: #7a3020;
+}
+
+.modalBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #27ae60;
+  padding: 16px;
+  background: #eafaf1;
+  border-radius: 8px;
+}
+
+.errorMsg {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #e74c3c;
+}
+
+/* ===== ПЛАНШЕТ ===== */
+
+@media screen and (min-width: 768px) {
+  .order {
+    padding: 80px 0;
+  }
+
+  .orderTitle {
+    font-size: 48px;
+  }
+
+  .orderCount {
+    font-size: 72px;
+  }
+  .orderInner {
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0 20px;
+  }
+}
+
+/* ===== ДЕСКТОП ===== */
+
+@media screen and (min-width: 1440px) {
+  .order {
+    padding: 100px 0;
+  }
+}

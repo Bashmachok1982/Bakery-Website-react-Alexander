@@ -1,0 +1,355 @@
+/* ===== МОБИЛКА ===== */
+
+.footer {
+  background-image:
+    linear-gradient(rgba(10, 5, 2, 0.88), rgba(10, 5, 2, 0.88)),
+    url("/img/footer/footer-bg-1x.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0 30px;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .footer {
+    background-image:
+      linear-gradient(rgba(10, 5, 2, 0.88), rgba(10, 5, 2, 0.88)),
+      url("/img/footer/footer-bg-2x.webp");
+  }
+}
+
+/* Верхняя часть */
+.footerTop {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.socialLabel {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #f5f5f5;
+}
+
+.socialList {
+  display: flex;
+  gap: 12px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(233, 189, 140, 0.15);
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.socialLink:hover {
+  background: #e9bd8c;
+  transform: scale(1.1);
+}
+
+.socialLink svg {
+  fill: #e9bd8c;
+  transition: fill 0.3s;
+}
+
+.socialLink:hover svg {
+  fill: #1a0f0a;
+}
+
+/* Разделитель */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 40px;
+}
+
+/* Три колонки */
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.col {
+}
+
+.colTitle {
+  font-family: "Sansita Swashed", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #e9bd8c;
+  margin-bottom: 20px;
+}
+
+/* About Us */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactItem {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: rgba(245, 245, 245, 0.8);
+  line-height: 1.5;
+}
+
+/* Explore */
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navLink {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: rgba(245, 245, 245, 0.8);
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #e9bd8c;
+}
+
+/* Recent News */
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.newsItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.newsImg {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.newsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.newsDate {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: rgba(245, 245, 245, 0.5);
+}
+
+.newsTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #f5f5f5;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.newsTitle:hover {
+  color: #e9bd8c;
+}
+
+/* Копирайт */
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
+  text-align: center;
+}
+
+.copyright p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.5);
+}
+
+/* Модалка рецепта */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 20px; /* padding-top = высота хедера */
+}
+
+.modal {
+  background: #fdf6ee;
+  border-radius: 16px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh; /* не на весь экран */
+  overflow-y: auto; /* скролл внутри модалки */
+  position: relative;
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #933c24;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modalClose:hover {
+  transform: rotate(90deg);
+}
+
+.modalImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.modalTitle {
+  font-family: "Sansita Swashed", sans-serif;
+  font-size: 24px;
+  color: #1a0f0a;
+  margin-bottom: 4px;
+}
+
+.modalDate {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.4);
+  display: block;
+  margin-bottom: 24px;
+}
+
+.recipeSection {
+  margin-bottom: 24px;
+}
+
+.recipeSubtitle {
+  font-family: "Sansita Swashed", sans-serif;
+  font-size: 18px;
+  color: #933c24;
+  margin-bottom: 12px;
+}
+
+.ingredientsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ingredientItem {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #3d2010;
+  padding-left: 16px;
+  position: relative;
+}
+
+.ingredientItem::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #933c24;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.stepItem {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #3d2010;
+  line-height: 1.6;
+}
+
+/* Курсор на новостях */
+.newsItem {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.newsItem:hover {
+  opacity: 0.8;
+}
+
+/* ===== ПЛАНШЕТ ===== */
+
+@media screen and (min-width: 768px) {
+  .footerTop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footerBottom {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  .colTitle {
+    font-size: 26px;
+  }
+}
+
+/* ===== ДЕСКТОП ===== */
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    padding: 70px 0 40px;
+  }
+
+  .colTitle {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .contactItem,
+  .navLink,
+  .newsTitle {
+    font-size: 16px;
+  }
+}

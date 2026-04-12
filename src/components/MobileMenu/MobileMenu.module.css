@@ -1,0 +1,177 @@
+/* ===== МОБИЛКА ===== */
+
+.mobMenu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  background-image:
+    linear-gradient(rgba(20, 10, 5, 0.92), rgba(20, 10, 5, 0.92)),
+    url("/img/hero/hero-desktop-1x.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.mobMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Кнопка закрытия */
+.menuCloseBtn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 88px;
+  font-size: 32px;
+  color: #e9bd8c;
+  font-weight: 300;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
+  z-index: 10000;
+}
+
+.menuCloseBtn:hover {
+  color: #fff;
+}
+
+/* Список меню */
+.mobMenuList {
+  margin-bottom: 50px;
+}
+
+.mobMenuItem:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+/* Ссылки меню */
+.mobMenuLink {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 12px;
+  transition: color 0.3s;
+  /* Анимация появления */
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.4s forwards;
+}
+
+.mobMenuItem:nth-child(1) .mobMenuLink {
+  animation-delay: 0.1s;
+}
+.mobMenuItem:nth-child(2) .mobMenuLink {
+  animation-delay: 0.2s;
+}
+.mobMenuItem:nth-child(3) .mobMenuLink {
+  animation-delay: 0.3s;
+}
+.mobMenuItem:nth-child(4) .mobMenuLink {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobMenuLink:hover,
+.mobMenuLink:focus {
+  color: #e9bd8c;
+}
+
+/* Бегущая рамка — pointer-events: none чтобы не блокировала клики! */
+.mobMenuLink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(
+    var(--mob-angle, 0deg),
+    #e9bd8c,
+    transparent 40%,
+    #e9bd8c
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotateMobBorder 1s linear infinite;
+  pointer-events: none; /* ← это было причиной проблемы! */
+  z-index: -1; /* под текстом ссылки */
+}
+
+@property --mob-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateMobBorder {
+  to {
+    --mob-angle: 360deg;
+  }
+}
+
+/* Ripple эффект */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(233, 189, 140, 0.4);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Контакты */
+.mobContacts {
+  margin-top: auto;
+}
+
+.mobContactsList {
+  display: flex;
+  gap: 18px;
+}
+
+.mobContactsIcon {
+  fill: transparent;
+  stroke: #fff;
+  transition: stroke 0.3s;
+}
+
+.mobContactsLink:hover .mobContactsIcon,
+.mobContactsLink:focus .mobContactsIcon {
+  stroke: #e9bd8c;
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Lattice Cookies",
+    "description": "Crispy butter cookies with a beautiful lattice pattern. Made with premium flour and natural vanilla. Perfect with morning coffee.",
+    "price": 65,
+    "img1x": "/img/products/products-1-1x.webp",
+    "img2x": "/img/products/products-1-2x.webp"
+  },
+  {
+    "id": 2,
+    "name": "Berry Croissant",
+    "description": "Flaky buttery croissant topped with fresh raspberries and blackberries. Filled with light vanilla cream. Baked fresh every morning.",
+    "price": 95,
+    "img1x": "/img/products/products-2-1x.webp",
+    "img2x": "/img/products/products-2-2x.webp"
+  },
+  {
+    "id": 3,
+    "name": "Grain Baguette",
+    "description": "Classic French baguette with a crunchy crust and soft interior. Made with whole grain flour and natural sourdough starter.",
+    "price": 85,
+    "img1x": "/img/products/products-3-1x.webp",
+    "img2x": "/img/products/products-3-2x.webp"
+  },
+  {
+    "id": 4,
+    "name": "Sourdough Round",
+    "description": "Traditional round sourdough bread with a thick crust. Slow fermented for 24 hours for maximum flavor and nutrition.",
+    "price": 120,
+    "img1x": "/img/products/products-4-1x.webp",
+    "img2x": "/img/products/products-4-2x.webp"
+  },
+  {
+    "id": 5,
+    "name": "Honey Pie",
+    "description": "Golden honey pie cut into perfect triangles. Made with natural honey, walnuts and fragrant spices. A true Eastern delight.",
+    "price": 220,
+    "img1x": "/img/products/products-5-1x.webp",
+    "img2x": "/img/products/products-5-2x.webp"
+  },
+  {
+    "id": 6,
+    "name": "Sesame Bun",
+    "description": "Soft round bun generously coated with black and white sesame seeds. Slightly sweet dough with a golden crust.",
+    "price": 55,
+    "img1x": "/img/products/products-6-1x.webp",
+    "img2x": "/img/products/products-6-2x.webp"
+  }
+]

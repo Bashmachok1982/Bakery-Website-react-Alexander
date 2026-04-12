@@ -1,0 +1,91 @@
+/* ===== МОБИЛКА ===== */
+
+.about {
+  background-image: url("/img/about/about-1x.webp");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .about {
+    background-image: url("/img/about/about-2x.webp");
+  }
+}
+
+.aboutInner {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  backdrop-filter: blur(2px);
+}
+
+.aboutTitle {
+  font-family: "Sansita Swashed", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.aboutText {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(245, 245, 245, 0.85);
+  margin-bottom: 32px;
+}
+
+.aboutBtn {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background: #933c24;
+  border-radius: 8px;
+  padding: 16px 40px;
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.aboutBtn:hover {
+  background: #7a3020;
+  transform: scale(1.03);
+}
+
+/* ===== ПЛАНШЕТ ===== */
+
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 80px 0;
+    background-position: right center;
+  }
+
+  .aboutTitle {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .aboutText {
+    font-size: 18px;
+  }
+  .aboutInner {
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0 20px;
+  }
+}
+
+/* ===== ДЕСКТОП ===== */
+
+@media screen and (min-width: 1440px) {
+  .about {
+    padding: 100px 0;
+  }
+}
