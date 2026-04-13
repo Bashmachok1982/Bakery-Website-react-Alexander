@@ -2,18 +2,6 @@ import { useState } from "react";
 import products from "../../data/products.json";
 import styles from "./Products.module.css";
 
-/* // Дублируем для бесконечной прокрутки
-const topRow = [
-  ...products.slice(0, 3),
-  ...products.slice(0, 3),
-  ...products.slice(0, 3),
-];
-const bottomRow = [
-  ...products.slice(3, 6),
-  ...products.slice(3, 6),
-  ...products.slice(3, 6),
-]; */
-// Стало — все 6 в каждом ряду, дублируем для бесконечности:
 const topRow = [...products, ...products];
 const bottomRow = [...products, ...products];
 
@@ -67,7 +55,6 @@ function Products({ onAddToCart }) {
         <h2 className={styles.title}>Top Products</h2>
       </div>
 
-      {/* Верхний ряд — едет влево */}
       <div className={styles.track}>
         <div className={`${styles.row} ${styles.rowLeft}`}>
           {topRow.map((product, i) => (
@@ -80,7 +67,6 @@ function Products({ onAddToCart }) {
           ))}
         </div>
 
-        {/* Нижний ряд — едет вправо */}
         <div className={`${styles.row} ${styles.rowRight}`}>
           {bottomRow.map((product, i) => (
             <ProductCard
@@ -93,7 +79,6 @@ function Products({ onAddToCart }) {
         </div>
       </div>
 
-      {/* Info модалка */}
       {infoProduct && (
         <div
           className={styles.infoBackdrop}

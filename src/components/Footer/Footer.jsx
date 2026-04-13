@@ -196,7 +196,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Модалка рецепта */}
       {activeRecipe && (
         <div className={styles.backdrop} onClick={() => setActiveRecipe(null)}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>

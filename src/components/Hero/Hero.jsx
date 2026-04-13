@@ -8,7 +8,6 @@ function Hero({ onCartOpen }) {
           <p className={styles.heroSubtitle}>Delicious Cafe</p>
           <h1 className={styles.heroTitle}>Sweet Treats, Perfect Eats</h1>
           <div className={styles.heroButtons}>
-            {/* Shop Now — открывает корзину */}
             <button
               className={styles.heroBtnBuy}
               type="button"
@@ -17,7 +16,6 @@ function Hero({ onCartOpen }) {
               Shop Now
             </button>
 
-            {/* Learn More — скроллит к продуктам */}
             <a className={styles.heroBtn} href="#products">
               Learn More
             </a>

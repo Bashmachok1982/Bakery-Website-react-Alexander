@@ -15,13 +15,13 @@ function Order() {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [copied, setCopied] = useState(false);
 
-  // Следим когда секция появляется в viewport
+ 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // срабатывает только один раз
+          observer.disconnect();
         }
       },
       { threshold: 0.3 },
@@ -30,7 +30,7 @@ function Order() {
     return () => observer.disconnect();
   }, []);
 
-  // Счётчик запускается когда секция видна
+ 
   useEffect(() => {
     if (!isVisible) return;
     let current = 0;
@@ -51,7 +51,7 @@ function Order() {
     return () => document.removeEventListener("keydown", handleKey);
   }, [isModalOpen]);
 
-  // Блокировка скролла при открытой модалке
+ 
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? "hidden" : "";
     return () => {
@@ -124,7 +124,7 @@ function Order() {
         </div>
       </div>
 
-      {/* Модалка */}
+  
       {isModalOpen && (
         <div
           className={styles.backdrop}
@@ -140,7 +140,6 @@ function Order() {
 
             <h3 className={styles.modalTitle}>Your Promo Code</h3>
 
-            {/* Промокод с кнопкой копирования */}
             <div className={styles.promoWrap}>
               <span className={styles.promoCode}>{PROMO_CODE}</span>
               <button className={styles.copyBtn} onClick={handleCopy}>

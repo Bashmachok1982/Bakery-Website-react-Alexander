@@ -1,10 +1,10 @@
-/* ===== МОБИЛКА (общие стили) ===== */
+
 
 .hero {
   background-image: url("/img/hero/hero-desktop-1x.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  /* На мобилке показываем правую часть где булочки */
+  
   background-position: right center;
 }
 
@@ -44,16 +44,14 @@
   flex-wrap: wrap;
 }
 
-/* Общий стиль кнопки — сброс padding/width/height */
-/* Используем только font и display */
+
 .heroBtnBuy {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #000;
   border-radius: 8px;
-  /* Вместо фиксированного width/height — padding */
-  /* Фиксированная ширина и высота ломают текст при разных шрифтах */
+
   padding: 14px 24px;
   background: #933c24;
   font-family: "Inter", sans-serif;
@@ -111,7 +109,7 @@
   color: #933c24;
 }
 
-/* ===== ПЛАНШЕТ ===== */
+
 
 @media screen and (min-width: 768px) {
   .heroContent {
@@ -139,10 +137,10 @@
   }
 }
 
-/* ===== ДЕСКТОП ===== */
+
 
 @media screen and (min-width: 1440px) {
-  /* На десктопе центрируем — обе стороны видны */
+
   .hero {
     background-position: center;
     width: 100%;
@@ -150,7 +148,7 @@
   }
 
   .heroContent {
-    padding-top: 120px; /* высота хедера */
+    padding-top: 120px; 
     padding-bottom: 60px;
   }
 

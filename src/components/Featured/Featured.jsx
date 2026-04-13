@@ -45,7 +45,6 @@ function Featured({ onAddToCart }) {
                   alt={item.name}
                   className={styles.img}
                 />
-                {/* Overlay при hover */}
                 <div className={styles.overlay}>
                   <button
                     className={styles.overlayBtn}

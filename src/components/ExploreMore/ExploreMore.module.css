@@ -14,7 +14,6 @@
   margin-bottom: 32px;
 }
 
-/* SELECT — мобилка */
 .selectWrap {
   position: relative;
   margin-bottom: 32px;
@@ -45,7 +44,6 @@
   box-shadow: 0 0 0 3px rgba(147, 60, 36, 0.15);
 }
 
-/* Кастомная стрелка */
 .selectArrow {
   position: absolute;
   right: 16px;
@@ -56,12 +54,10 @@
   pointer-events: none;
 }
 
-/* Кнопки фильтров — скрыты на мобилке */
 .filtersWrap {
   display: none;
 }
 
-/* Счётчик */
 .counter {
   font-family: "Inter", sans-serif;
   font-size: 13px;
@@ -70,7 +66,6 @@
   margin-bottom: 20px;
 }
 
-/* Сетка */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -124,8 +119,6 @@
   text-align: center;
 }
 
-/* ===== ПЛАНШЕТ ===== */
-
 @media screen and (min-width: 768px) {
   .explore {
     padding: 80px 0;
@@ -136,12 +129,10 @@
     margin-bottom: 40px;
   }
 
-  /* Скрываем select на планшете */
   .selectWrap {
     display: none;
   }
 
-  /* Показываем кнопки */
   .filtersWrap {
     display: block;
     margin-bottom: 40px;
@@ -200,8 +191,6 @@
     gap: 20px;
   }
 }
-
-/* ===== ДЕСКТОП ===== */
 
 @media screen and (min-width: 1440px) {
   .explore {

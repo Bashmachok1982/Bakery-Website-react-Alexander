@@ -1,4 +1,4 @@
-/* ===== МОБИЛКА ===== */
+
 
 .featured {
   padding: 60px 0;
@@ -116,7 +116,7 @@
   color: #933c24;
 }
 
-/* ===== ПЛАНШЕТ ===== */
+
 
 @media screen and (min-width: 768px) {
   .featured {
@@ -143,7 +143,7 @@
   }
 }
 
-/* ===== ДЕСКТОП ===== */
+
 
 @media screen and (min-width: 1440px) {
   .featured {
