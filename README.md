@@ -1,16 +1,83 @@
-# React + Vite
+🍞 Bakery Website
+📸 Preview
+🇺🇦 Українська
+🔗 Демо
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+👉 https://bakery-website-react-alexander.vercel.app/
 
-Currently, two official plugins are available:
+🚀 Технології
+React
+Vite
+JavaScript (ES6+)
+CSS Modules
+LocalStorage
+Fetch API
+Telegram Bot API
+🛒 Функціональність
+Кошик товарів (додавання, видалення, кількість)
+Автоматичний підрахунок суми
+Промокод (SWEET20 — знижка 20%)
+Валідація форми (ім’я, телефон, email)
+Оформлення замовлення
+⚙️ Як працює
+Дані кошика зберігаються в LocalStorage
+Форма проходить валідацію
+Формується текст замовлення
+Через fetch (POST) відправляється в Telegram Bot API
+Замовлення приходить у Telegram
+📡 Архітектура
+Frontend (React)
+↓
+Fetch API (POST)
+↓
+Telegram Bot API
+↓
+Telegram Chat
+🇬🇧 English
+🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+👉 https://bakery-website-react-alexander.vercel.app/
 
-## React Compiler
+🚀 Technologies
+React
+Vite
+JavaScript (ES6+)
+CSS Modules
+LocalStorage
+Fetch API
+Telegram Bot API
+🛒 Features
+Shopping cart (add/remove/update items)
+Automatic price calculation
+Promo code (SWEET20 — 20% discount)
+Form validation (name, phone, email)
+Order submission
+⚙️ How it works
+Cart data is stored in LocalStorage
+Form is validated before submission
+Order message is generated
+Sent via fetch (POST) to Telegram Bot API
+Order is delivered to Telegram
+📡 Architecture
+Frontend (React)
+↓
+Fetch API (POST)
+↓
+Telegram Bot API
+↓
+Telegram Chat
+📦 Installation
+git clone https://github.com/Bashmachok1982/Bakery-Website-react-Alexander.git
+cd Bakery-Website-react-Alexander
+npm install
+npm run dev
+🛠️ Build
+npm run build
+👤 Author
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Alexander
+https://github.com/Bashmachok1982
 
-## Expanding the ESLint configuration
+📝 License
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Educational / Portfolio project
