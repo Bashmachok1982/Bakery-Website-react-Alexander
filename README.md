@@ -1,78 +1,105 @@
-🍞 Bakery Website
+# 🥐 Keithston Bakery
 
-Сучасний адаптивний сайт пекарні з кошиком та оформленням замовлення.
+A modern, fully responsive bakery website built with React + Vite.
+Crafted as a portfolio project to practice real-world frontend development.
 
-📸 <img src=/public/preview.webp alt="Preview" />
-🇺🇦 Українська
-🔗 Демо
+## 🚀 Live Demo
 
-👉 https://bakery-website-react-alexander.vercel.app/
+[bakery-website-react-alexander.vercel.app](https://bakery-website-react-alexander.vercel.app)
 
-🚀 Технології
-React
-Vite
-JavaScript (ES6+)
-CSS Modules
-LocalStorage
-Fetch API
-Telegram Bot API
-🛒 Функціональність
-Кошик товарів (додавання, видалення, кількість)
-Автоматичний підрахунок суми
-Промокод SWEET20 (-20%)
-Валідація форми (ім’я, телефон, email)
-Оформлення замовлення
-⚙️ Як це працює
-Дані зберігаються в LocalStorage
-Форма проходить валідацію
-Формується текст замовлення
-Відправка через fetch (POST)
-Замовлення приходить у Telegram
-📡 Архітектура
-React App
-↓
-Fetch (POST)
-↓
-Telegram Bot API
-↓
-Telegram
-🇬🇧 English
-🔗 Live Demo
+![Keithston Bakery Preview](./public/preview.webp)
 
-👉 https://bakery-website-react-alexander.vercel.app/
+## 🛠️ Tech Stack
 
-🚀 Technologies
-React
-Vite
-JavaScript (ES6+)
-CSS Modules
-LocalStorage
-Fetch API
-Telegram Bot API
-🛒 Features
-Shopping cart (add/remove/update)
-Automatic price calculation
-Promo code SWEET20 (-20%)
-Form validation
-Order submission
-⚙️ How it works
-Cart is stored in LocalStorage
-Form is validated
-Order message is generated
-Sent via fetch (POST)
-Delivered to Telegram
-📦 Installation
+- **React 19** — component-based UI
+- **Vite** — lightning fast build tool
+- **CSS Modules** — scoped, conflict-free styles
+- **Swiper** — touch slider
+- **AOS** — scroll animations
+- **react-hot-toast** — toast notifications
+- **Telegram Bot API** — order & promo notifications (no backend!)
+- **localStorage** — cart persistence across sessions
+
+## 📦 Features
+
+- 📱 Fully responsive — mobile / tablet / desktop (375px / 768px / 1440px)
+- 🍔 Mobile menu with ripple effect and slide-in animation
+- 🛒 Shopping cart — add/remove items, quantity control, persisted in localStorage
+- 💳 Order form with contact details sent directly to Telegram
+- 🎁 Promo code system with 20% discount validation
+- 💬 Reminder to claim discount if ordering without promo code
+- 🔄 Infinite scroll marquee for product rows (two directions)
+- 🖼️ Explore gallery with category filters and Load More pagination
+- 🌟 Popular picks section
+- 📰 Recipe modal in footer with ingredients and step-by-step instructions
+- 🎞️ Scroll animations via AOS
+- ✨ Animated rotating border on navigation
+- 🔔 Toast notifications
+- 📬 Promo subscription form — email sent to Telegram bot
+- 🏠 Fixed transparent header with blur on scroll
+
+## 🏗️ Project Structure
+
+src/
+├── components/
+│ ├── Header/
+│ ├── MobileMenu/
+│ ├── Hero/
+│ ├── Products/
+│ ├── Featured/
+│ ├── AboutUs/
+│ ├── Order/
+│ ├── ExploreMore/
+│ ├── Cart/
+│ └── Footer/
+├── data/
+│ └── products.json
+├── styles/
+│ └── global.css
+└── App.jsx
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repo
 git clone https://github.com/Bashmachok1982/Bakery-Website-react-Alexander.git
-cd Bakery-Website-react-Alexander
+
+# Install dependencies
 npm install
+
+# Start dev server
 npm run dev
-🛠️ Build
+
+# Build for production
 npm run build
-👤 Author
+```
 
-Alexander
-https://github.com/Bashmachok1982
+## 🔑 Environment Variables
 
-📝 License
+Create `.env` file in root:
+VITE_TELEGRAM_BOT_TOKEN=your_bot_token
+VITE_TELEGRAM_CHAT_ID=your_chat_id
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_EMAILJS_SUBSCRIBE_TEMPLATE_ID=your_subscribe_template_id
 
-Educational / Portfolio project
+## 📚 What I Learned
+
+- React hooks — `useState`, `useEffect`, `useRef`
+- Lifting state up and props drilling
+- Controlled forms with validation
+- CSS Modules and responsive design
+- Component architecture and separation of concerns
+- localStorage for data persistence
+- Telegram Bot API integration without backend
+- IntersectionObserver for scroll-triggered animations
+- CSS animations — rotating border, wiggle, ripple, marquee
+- Lazy loading images for performance
+- Adaptive images with `srcSet` for retina displays
+
+---
+
+Design inspired by [Bakery Website UI](https://www.figma.com/design/TH9n5z0pX18QSzqXimUQSm/Bakery-Website-Ui--Community-/)
+
+Made with ❤️ and a lot of 🥐
