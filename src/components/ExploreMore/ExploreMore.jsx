@@ -16,7 +16,6 @@ const CATEGORIES = [
 const generateItems = (category, count) =>
   Array.from({ length: count }, (_, i) => ({
     id: `${category}-${i + 1}`,
-    img1x: `/img/explore/${category}/explore-${category}-${i + 1}-1x.webp`,
     img2x: `/img/explore/${category}/explore-${category}-${i + 1}-2x.webp`,
     alt: `${category} ${i + 1}`,
     category,
@@ -117,7 +116,7 @@ function ExploreMore() {
           {visibleItems.map((item) => (
             <li key={item.id} className={styles.gridItem}>
               <img
-                srcSet={`${item.img1x} 1x, ${item.img2x} 2x`}
+                srcSet={` ${item.img2x} 2x`}
                 src={item.img1x}
                 alt={item.alt}
                 className={styles.img}
