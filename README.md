@@ -1,5 +1,8 @@
 🍞 Bakery Website
-📸 Preview
+
+Сучасний адаптивний сайт пекарні з кошиком та оформленням замовлення.
+
+📸 <img src=/public/preview.webp alt="Preview" />
 🇺🇦 Українська
 🔗 Демо
 
@@ -16,23 +19,23 @@ Telegram Bot API
 🛒 Функціональність
 Кошик товарів (додавання, видалення, кількість)
 Автоматичний підрахунок суми
-Промокод (SWEET20 — знижка 20%)
+Промокод SWEET20 (-20%)
 Валідація форми (ім’я, телефон, email)
 Оформлення замовлення
-⚙️ Як працює
-Дані кошика зберігаються в LocalStorage
+⚙️ Як це працює
+Дані зберігаються в LocalStorage
 Форма проходить валідацію
 Формується текст замовлення
-Через fetch (POST) відправляється в Telegram Bot API
+Відправка через fetch (POST)
 Замовлення приходить у Telegram
 📡 Архітектура
-Frontend (React)
+React App
 ↓
-Fetch API (POST)
+Fetch (POST)
 ↓
 Telegram Bot API
 ↓
-Telegram Chat
+Telegram
 🇬🇧 English
 🔗 Live Demo
 
@@ -47,25 +50,17 @@ LocalStorage
 Fetch API
 Telegram Bot API
 🛒 Features
-Shopping cart (add/remove/update items)
+Shopping cart (add/remove/update)
 Automatic price calculation
-Promo code (SWEET20 — 20% discount)
-Form validation (name, phone, email)
+Promo code SWEET20 (-20%)
+Form validation
 Order submission
 ⚙️ How it works
-Cart data is stored in LocalStorage
-Form is validated before submission
+Cart is stored in LocalStorage
+Form is validated
 Order message is generated
-Sent via fetch (POST) to Telegram Bot API
-Order is delivered to Telegram
-📡 Architecture
-Frontend (React)
-↓
-Fetch API (POST)
-↓
-Telegram Bot API
-↓
-Telegram Chat
+Sent via fetch (POST)
+Delivered to Telegram
 📦 Installation
 git clone https://github.com/Bashmachok1982/Bakery-Website-react-Alexander.git
 cd Bakery-Website-react-Alexander
